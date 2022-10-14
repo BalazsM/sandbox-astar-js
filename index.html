@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="utf-8" />
+	</head>
+	<body>
+    	<script src="index.js"></script>
+
+		<div id="workspace"></div>
+
+		<div id="properties" class="sidebar">
+			<h3>Simple A* pathfinding algorithm</h3>
+
+			<p><a href="https://github.com/BalazsM/sandbox-astar">source code</a></p>
+
+			<h4>Simulation stats</h4>
+			<table>
+				<tr><td>FPS:</td><td id="simulationFPSDisplay"></td></tr>
+				<tr><td>Start position:</td><td id="simulationStartPositionDisplay"></td></tr>
+				<tr><td>End position:</td><td id="simulationEndPositionDisplay"></td></tr>
+				<tr><td>Path length:</td><td id="simulationPathLengthDisplay"></td></tr>
+			</table>
+
+			<h4>Simulation options</h4>
+			<div>
+				<label for="simulationGridSeedInput">Grid seed: <output id="simulationGridSeedOutput"></output></label>
+				<input type="range" id="simulationGridSeedInput" min="0" max="100" value="50" step="1"
+					oninput="simulationGridSeedOutput.value = simulationGridSeedInput.value; simulationGridRegenerate = true;">
+			</div>
+			<div>
+				<label for="simulationGridWallRateInput">Grid wall rate: <output id="simulationGridWallRateOutput"></output></label>
+				<input type="range" id="simulationGridWallRateInput" min="0" max="1" value="0.3" step="0.01"
+					oninput="simulationGridWallRateOutput.value = simulationGridWallRateInput.value; simulationGridRegenerate = true;">
+			</div>
+			<div>
+				<label for="simulationGridColumnsInput">Grid columns: <output id="simulationGridColumnsOutput"></output></label>
+				<input type="range" id="simulationGridColumnsInput" min="10" max="200" value="100" step="1"
+					oninput="simulationGridColumnsOutput.value = simulationGridColumnsInput.value">
+			</div>
+			<div>
+				<label for="simulationGridRowsInput">Grid rows: <output id="simulationGridRowsOutput"></output></label>
+				<input type="range" id="simulationGridRowsInput" min="10" max="200" value="70" step="1"
+					oninput="simulationGridRowsOutput.value = simulationGridRowsInput.value">
+			</div>
+
+			<h4>Display options</h4>
+			<div>
+				<input type="checkbox" id="simulationShowOpenSet">
+				<label for="simulationShowOpenSet">Show open set</label>
+			</div>
+			<div>
+				<input type="checkbox" id="simulationShowClosedSet">
+				<label for="simulationShowClosedSet">Show closed set</label>
+			</div>
+
+			<h4>Help</h4>
+			<div>
+				<p>The code is based on <a href="https://codingtrain.github.io/AStar/">Daniel Shiffman's A* pathfinding tutorial</a></p>
+				<p>While moving cursor on grid you can hold keys down for various options.</p>
+				<table>
+					<tr><td>s</td><td>set start position</td></tr>
+					<tr><td>e</td><td>set end position</td></tr>
+					<tr><td>w</td><td>place wall</td></tr>
+					<tr><td>a</td><td>remove wall</td></tr>
+					<tr><td>space</td><td>toggle wall</td></tr>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

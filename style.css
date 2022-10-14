@@ -1,0 +1,65 @@
+html, body {
+	margin: 0;
+	padding: 0;
+
+	background-color: #e0e0e0;
+	color: #ddd;
+
+	font-size: 16px;
+	font-family: sans-serif;
+
+	user-select: none;
+}
+
+canvas {
+	display: block;
+}
+
+a, a:link, a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+}
+
+h3,
+h4,
+h5 {
+	letter-spacing: 2px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+input[type="range"] {
+	width: 100%;
+}
+
+h3, h4, h5, ul, p, input, label, td {
+	filter: drop-shadow(0 0 5px #000000F0);
+}
+
+.sidebar {
+	position: absolute;
+
+	overflow: auto;
+	top: 30px;
+	bottom: 30px;
+	width: 270px;
+
+	padding-top: 20px;
+	padding-bottom: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+#description {
+	left: 30px;
+
+}
+
+#properties {
+	right: 30px;
+}
