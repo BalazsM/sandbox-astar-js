@@ -187,7 +187,6 @@ class AStar {
 			  newPath = true;
 			  this.openSet.push(neighbor);
 			}
-  
 					// Yes, it's a better path
 					if (newPath) {
 						neighbor.f = neighbor.g + dist(neighbor.x, neighbor.y, this.endCell.x, this.endCell.y);
@@ -248,10 +247,10 @@ function windowResized() {
  
 function mouseMoved() {
 	const ox = cellWidth / 2;
-	mouseGridX = ((mouseX - ox) / cellWidth).toFixed(0);
+	mouseGridX = abs(round((mouseX - ox) / cellWidth));
 
 	const oy = cellRadius + ((mouseGridX % 2) ? 0 : cellHeight / 2);
-	mouseGridY = ((mouseY - oy) / cellHeight).toFixed(0);
+	mouseGridY = abs(round((mouseY - oy) / cellHeight));
 
 //	console.log(mouseGridX, mouseGridY, aStar.gridColumns, aStar.gridRows);
 
@@ -404,7 +403,7 @@ function drawAStarGrid() {
 				fillColor = cellLockedColor;
 
 			let strokeColor = null;
-			if (mouseGridX == gridX && mouseGridY == gridY)
+			if ((mouseGridX == gridX) && (mouseGridY == gridY))
 				strokeColor = color(0);
 
 			drawAStarGridCell(cell, fillColor, strokeColor);
