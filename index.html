@@ -21,16 +21,28 @@
 
 				<div class="d-flex justify-content-center m-2">
 					<div><a href="https://cubie.hu" class="link-secondary m-2">2023 cuBie</a></div>
-					<div><a href="https://github.com/BalazsM/sandbox-astar" class="link-primary m-2">source code</a></div>
+					<div><a href="https://github.com/BalazsM/sandbox-astar-js" class="link-primary m-2">source code</a></div>
 				</div>
 		
 				<h5>Stats</h5>
 
 				<table class="table table-sm">
-					<tr><td>FPS</td><td id="simulationFPSDisplay"></td></tr>
-					<tr><td>Start position</td><td id="simulationStartPositionDisplay"></td></tr>
-					<tr><td>End position</td><td id="simulationEndPositionDisplay"></td></tr>
-					<tr><td>Path length</td><td id="simulationPathLengthDisplay"></td></tr>
+					<tr>
+						<td>FPS</td>
+						<td id="simulationFPSDisplay" class="text-end"></td>
+					</tr>
+					<tr>
+						<td>Start position</td>
+						<td id="simulationStartPositionDisplay" class="text-end"></td>
+					</tr>
+					<tr>
+						<td>End position</td>
+						<td id="simulationEndPositionDisplay" class="text-end"></td>
+					</tr>
+					<tr>
+						<td>Path length</td>
+						<td id="simulationPathLengthDisplay" class="text-end"></td>
+					</tr>
 				</table>
 
 				<h5>Options</h5>
@@ -38,50 +50,50 @@
 				<table class="table table-sm">
 					<tr>
 						<td>Grid seed</td>
-						<td><output id="simulationGridSeedOutput"></output></td>
 						<td><input type="range" id="simulationGridSeedInput" class="form-range" min="0" max="100" value="50" step="1"
 							oninput="simulationGridSeedOutput.value = simulationGridSeedInput.value; simulationGridRegenerate = true;"></td>
+						<td class="text-end"><output id="simulationGridSeedOutput"></output></td>
 					</tr>
 					<tr>
 						<td>Grid wall rate</td>
-						<td><output id="simulationGridWallRateOutput"></output></td>
 						<td><input type="range" id="simulationGridWallRateInput" class="form-range" min="0" max="1" value="0.3" step="0.01"
 								oninput="simulationGridWallRateOutput.value = simulationGridWallRateInput.value; simulationGridRegenerate = true;"></td>
+						<td class="text-end"><output id="simulationGridWallRateOutput"></output></td>
 					</tr>
 					<tr>
 						<td>Grid columns</td>
-						<td><output id="simulationGridColumnsOutput"></output></td>
 						<td><input type="range" id="simulationGridColumnsInput" class="form-range" min="10" max="200" value="100" step="1"
 							oninput="simulationGridColumnsOutput.value = simulationGridColumnsInput.value"></td>
+						<td class="text-end"><output id="simulationGridColumnsOutput"></output></td>
 					</tr>
 					<tr>
 						<td>Grid rows</td>
-						<td><output id="simulationGridRowsOutput"></output></td>
 						<td><input type="range" id="simulationGridRowsInput" class="form-range" min="10" max="200" value="70" step="1"
 							oninput="simulationGridRowsOutput.value = simulationGridRowsInput.value"></td>
+						<td class="text-end"><output id="simulationGridRowsOutput"></output></td>
 					</tr>
 					<tr>
 						<td>Show closed set</td>
-						<td><input type="checkbox" id="simulationShowClosedSet"></td>
 						<td></td>
+						<td class="text-end"><input type="checkbox" id="simulationShowClosedSet"></td>
 					</tr>
 					<tr>
 						<td>Show open set</td>
-						<td><input type="checkbox" id="simulationShowOpenSet"></td>
 						<td></td>
+						<td class="text-end"><input type="checkbox" id="simulationShowOpenSet"></td>
 					</tr>
 				</table>
 
 				<h5>Help</h5>
 
 				<p>The code is based on <a href="https://codingtrain.github.io/AStar/">Daniel Shiffman's A* pathfinding tutorial</a></p>
-				<p>While moving cursor on grid you can hold keys down for various options.</p>
+				<p>While moving cursor on grid you can hold keys down for various actions                                         .</p>
 				<table class="table table-sm">
-					<tr><td>s</td><td>set start position</td></tr>
-					<tr><td>e</td><td>set end position</td></tr>
-					<tr><td>w</td><td>place wall</td></tr>
-					<tr><td>a</td><td>remove wall</td></tr>
-					<tr><td>space</td><td>toggle wall</td></tr>
+					<tr><td class="text-end"><strong>s</strong></td><td>set start position</td></tr>
+					<tr><td class="text-end"><strong>e</strong></td><td>set end position</td></tr>
+					<tr><td class="text-end"><strong>w</strong></td><td>place wall</td></tr>
+					<tr><td class="text-end"><strong>a</strong></td><td>remove wall</td></tr>
+					<tr><td class="text-end"><strong>space</strong></td><td>toggle wall</td></tr>
 				</p>
 			</div>
 		</div>
